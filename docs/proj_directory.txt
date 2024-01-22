@@ -1,0 +1,52 @@
+LocalInsightProject/
+│
+├── api-gateway/                    # API Gateway to route requests to microservices
+│   ├── src/                        # Source code for API Gateway
+│   │   ├── routes/                 # Route definitions
+│   │   ├── middleware/             # Middleware for authentication, logging, etc.
+│   │   └── utils/                  # Utility functions
+│   └── README.md                   # Instructions and documentation for the API Gateway
+│
+├── microservices/                  # Root directory for all microservices
+│   ├── UserService/                # Microservice for user-related operations
+│   │   ├── src/                    # Source code
+│   │   │   ├── controllers/        # Controllers for user operations
+│   │   │   ├── models/             # User data models
+│   │   │   └── routes/             # API route definitions
+│   │   └── README.md               # Documentation for UserService
+│   │
+│   ├── BusinessService/            # Microservice for business-related operations
+│   │   ├── src/                    # Similar structure as UserService
+│   │   └── README.md               # Documentation for BusinessService
+│   │
+│   ├── ReviewService/              # Microservice for review-related operations
+│   │   ├── src/                    # Similar structure as UserService
+│   │   └── README.md               # Documentation for ReviewService
+│   │
+│   └── MarketResearchService/      # Microservice for market research operations
+│       ├── src/                    # Similar structure as UserService
+│       └── README.md               # Documentation for MarketResearchService
+│
+├── db/                             # Database directory
+│   ├── migrations/                 # Migration scripts
+│   ├── seeds/                      # Seed scripts for initial data
+│   └── README.md                   # Documentation for database setup and schema
+│
+├── docs/                           # Documentation directory
+│   ├── ...
+│
+├── frontend/                       # Frontend service directory
+│   ├── static/                     # Static files like CSS, JavaScript, and images
+│   ├── templates/                  # HTML templates
+│   └── README.md                   # Frontend setup and documentation
+│
+├── tests/                          # Centralized tests for microservices
+│   ├── UserServiceTests/           # Tests specific to the UserService
+│   ├── BusinessServiceTests/       # Tests for the BusinessService
+│   ├── ReviewServiceTests/         # Tests for ReviewService
+│   └── MarketResearchServiceTests/ # Tests for MarketResearchService
+│
+├── venv/                           # Virtual environment for Flask dependencies
+├── run.py                          # Entry point to run the Flask application
+├── requirements.txt                # All the dependencies for the project
+└── README.md                       # General project information and setup guide
