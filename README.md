@@ -1,2 +1,2 @@
 # local-biz
-Local Business review Platform
+Local Business Review Platform
