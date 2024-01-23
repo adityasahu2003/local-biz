@@ -9,10 +9,12 @@
 
 ## Table Name: businesses
 ### Columns:
-- business_name (Primary Key) - VARCHAR(255) NOT NULL
+- business_id (Primary Key) - SERIAL NOT NULL
+- business_name - VARCHAR(255) NOT NULL
 - business_pic_path - VARCHAR(255)
+- business_category - VARCHAR(255) NOT NULL
 - Constraints:
-    - Primary Key (business_name)
+    - Primary Key (business_id)
 
 
 ## Table Name: reviews
@@ -21,8 +23,8 @@
 - username - VARCHAR(255) NOT NULL
 - business_name - VARCHAR(255) NOT NULL
 - timestamp - TIMESTAMP NOT NULL
-- review_string - TEXT
-- rating - INTEGER CHECK (rating >= 1 AND rating <= 5)
+- review_string - TEXT (default NULL)
+- rating - INTEGER CHECK (rating >= 1 AND rating <= 5) NOT NULL
 - Constraints:
     - Primary Key (review_id)
     - Foreign Key (username) REFERENCES users(username)
