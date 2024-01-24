@@ -89,7 +89,11 @@ const Register = () => {
                     </div>
                 </div>
                 <div className="bg-black hidden lg:block w-1/2">
-                    {/* insert image here */}
+                <img 
+               src="/images/Group4.png"
+               alt="Login Image"
+               className="w-full h-full object-cover"
+               />
                 </div>
             </div>
         </>
