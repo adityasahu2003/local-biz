@@ -58,7 +58,7 @@ const Login = () => {
                             <div>
                                 <button
                                     type="submit"
-                                    className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                    className="flex w-full justify-center rounded-md bg-primary-darkgreen px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary-mediumgreen focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                 >
                                     Sign in
                                 </button>
@@ -67,7 +67,7 @@ const Login = () => {
 
                         <p className="mt-10 text-center text-sm text-gray-500">
                             Not having an Account?{' '}
-                            <a href="/register" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+                            <a href="/register" className="font-semibold leading-6 text-primary-darkgreen hover:text-primary-mediumgreen">
                                 Register now
                             </a>
                         </p>
