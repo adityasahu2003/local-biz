@@ -1,9 +1,11 @@
+import Navbar from "../components/Navbar"
+
 const User = () => {
     return(
-        <div>
-            
+        <>
+            <Navbar/>
             User Page
-        </div>
+        </>
     )
 }
 
