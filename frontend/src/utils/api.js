@@ -26,7 +26,7 @@ export const getBusinesses = async () => {
 }
 
 export const getBusiness = async id => {
-    const response = (await fetch(`http://localhost:5000/businesses/${id}`)).json()
+    const response = (await fetch(`http://localhost:5000/business/${id}`)).json()
     return response
 }
 
@@ -35,9 +35,10 @@ export const getReviews = async id => {
     return response
 }
 
-export const postReview = async (username, business_id, review_string, rating) => {
+export const postReview = async (business_id, review_string, rating) => {
     try{
         const token = localStorage.getItem("token")
+        const username = localStorage.getItem("username")
         const response = await fetch("http://localhost:5000/postreview",{
             method: 'POST',
             headers: {
@@ -48,6 +49,8 @@ export const postReview = async (username, business_id, review_string, rating) =
         if(response.status === 201){
             return true
         }else if(response.status === 401){
+            // localStorage.clear()
+            // window.location.replace("/login")
             return false
         }
     }catch(err){

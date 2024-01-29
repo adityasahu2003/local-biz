@@ -16,6 +16,7 @@ export const AuthProvider = ({ children }) => {
                 const data = await response.json()
                 const token = data.token
                 localStorage.setItem("token", token)
+                localStorage.setItem("username", username)
                 setUser(response.user)
                 window.location.replace("/")
             }else{
@@ -35,6 +36,7 @@ export const AuthProvider = ({ children }) => {
                 const data = await response.json()
                 const token = data.token
                 localStorage.setItem("token", token)
+                localStorage.setItem("username", username)
                 setUser(response.user)
                 window.location.replace("/")
             }else{
@@ -53,6 +55,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     const value = {
+        user,
         register,
         signIn,
         logOut

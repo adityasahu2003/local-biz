@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 const BusinessList = ({businesses}) => {
+
     const categories = [
         {type: "Education"},
         {type: "Restaurant"},
@@ -20,24 +22,22 @@ const BusinessList = ({businesses}) => {
 
     const getCategoryBadge = (category) => badge[category];
 
-
     return(
         <>
-            <div className="sm:container sm:mx-auto p-8">
+            <div className="mx-auto p-8 max-w-3xl">
                 <h1>Business List</h1>
                 {businesses && businesses.map(business => (
-                    <div className="flex flex-col sm:flex-row gap-2 mb-4 bg-slate-300 rounded-md">
+                    <Link className="flex flex-col sm:flex-row gap-2 mb-4 bg-[#f8f9fa] rounded-md shadow-xl hover:shadow-md" to={`/business/${business.business_id}`} key={business.business_id}>
                         <img src={business.business_pic_path} alt="" className="rounded-md"/>
-                        <div className="py-8">
+                        <div className="py-8 pl-4 sm:pl-0">
                             <h2 className="font-bold text-xl mb-4">{business.business_name}</h2>
-
                             <span
                                 className={`inline-flex items-center rounded-md ${getCategoryBadge(business.business_category)} px-2 py-1 text-xs font-medium`}
                             >
                                 {business.business_category}
                             </span>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </>

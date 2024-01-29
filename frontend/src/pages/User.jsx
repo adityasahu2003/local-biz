@@ -22,7 +22,6 @@ const User = () => {
     useEffect(() => {
         const fetchData = async () => {
             const response = await getBusinesses()
-            console.log(response)
             setBusinesses([...response])
         }
         fetchData()
