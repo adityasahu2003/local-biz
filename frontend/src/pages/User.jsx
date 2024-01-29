@@ -1,7 +1,8 @@
+import { useEffect, useState } from "react"
 import Navbar from "../components/Navbar"
 import Categories from "../components/Categories"
 import Search from "../components/Search"
-import { useEffect, useState } from "react"
+import BusinessList from "../components/BusinessList"
 import { getBusinesses } from "../utils/api"
 
 
@@ -11,7 +12,6 @@ const User = () => {
     useEffect(() => {
         const fetchData = async () => {
             const response = await getBusinesses()
-            console.log(response)
             setBusinesses(response)
         }
         fetchData()
@@ -19,8 +19,9 @@ const User = () => {
     return(
         <>
             <Navbar/>
-            <Categories/>
-            <Search/>
+            <Categories buisinesses={buisinesses} setBusinesses={setBusinesses}/>
+            <Search buisinesses={buisinesses} setBusinesses={setBusinesses}/>
+            <BusinessList buisinesses={buisinesses}/>
         </>
     )
 }
