@@ -20,7 +20,8 @@ const User = () => {
     useEffect(() => {
         const fetchData = async () => {
             const response = await getBusinesses()
-            setBusinesses(response)
+            console.log(response)
+            setBusinesses([...response])
         }
         fetchData()
     },[])
@@ -28,9 +29,9 @@ const User = () => {
         <>
             <Navbar/>
             <Slider slides={SliderData}/>
-            <Categories buisinesses={buisinesses} setBusinesses={setBusinesses}/>
-            <Search buisinesses={buisinesses} setBusinesses={setBusinesses}/>
-            <BusinessList buisinesses={buisinesses}/>
+            <Categories businesses={buisinesses} setBusinesses={setBusinesses}/>
+            <Search businesses={buisinesses} setBusinesses={setBusinesses}/>
+            <BusinessList businesses={buisinesses}/>
         </>
     )
 }
