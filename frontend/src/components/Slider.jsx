@@ -27,7 +27,7 @@ const ImageSlider = ({ slides }) => {
   }
 
   return (
-    <div className="">
+    <div className="flex justify-items-start">
     <section className='slider'>
       <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
       <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />
@@ -43,6 +43,13 @@ const ImageSlider = ({ slides }) => {
           </div>
         );
       })}
+    </section>
+    <section className="slider-content">
+         <div className="sliderdata">
+         Enrich your online business
+         </div>
+         <div className="sliderdatasmall">Best reviews for business near you!</div>
+         <div className="sliderbutton">Get Started</div>
     </section>
     </div>
   ); 

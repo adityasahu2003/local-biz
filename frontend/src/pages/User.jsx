@@ -6,6 +6,8 @@ import Slider from "../components/Slider"
 import {SliderData} from "../components/SliderData"
 import BusinessList from "../components/BusinessList"
 import { getBusinesses } from "../utils/api"
+import "./user.css"
+
 
 const User = () => {
     const [buisinesses, setBusinesses] = useState([])
