@@ -18,7 +18,7 @@ db.init_app(app)
 @app.route('/register', methods=['POST'])
 def register_user():
     data = request.json
-    new_user = User(username=data['username'], password_hash=data['password_hash'], profile_pic_path=data['profile_pic_path'])
+    new_user = User(username=data['username'], password_hash=data['password_hash'], email_id=data['email_id'])
     db.session.add(new_user)
     db.session.commit()
     str = MY_ENV_VAR + data['username']
