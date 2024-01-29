@@ -7,7 +7,7 @@
   }
   
   .image {
-width: 100%;
+width: 42rem;
     height: 27rem;
     border-radius: 10px;
   }
@@ -43,4 +43,28 @@ width: 100%;
     opacity: 1;
     transition-duration: 1s;
     transform: scale(1.08);
+  }
+  .sliderdata{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height:15rem;
+    font-size: 2.4rem;
+    padding-left: 8rem;
+    font-weight: 600;
+  }
+  .sliderdatasmall{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:1.4rem;
+   
+  }
+  .sliderbutton{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 8rem ;
+    
+   
   }
