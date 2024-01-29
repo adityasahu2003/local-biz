@@ -5,12 +5,13 @@ from sqlalchemy import and_
 from dotenv import load_dotenv
 import os
 import hashlib
-
+from flask_cors import CORS
 load_dotenv()
 
 MY_ENV_VAR = os.getenv('MY_ENV_VAR')
 
 app = Flask(__name__)
+CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///localBizDB.db'
 db.init_app(app)
 
