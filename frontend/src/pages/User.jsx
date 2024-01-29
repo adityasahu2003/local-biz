@@ -1,17 +1,25 @@
+import { useEffect, useState } from "react"
 import Navbar from "../components/Navbar"
 import Categories from "../components/Categories"
 import Search from "../components/Search"
-import { useEffect, useState } from "react"
+import Slider from "../components/Slider"
+import {SliderData} from "../components/SliderData"
+import BusinessList from "../components/BusinessList"
 import { getBusinesses } from "../utils/api"
-
 
 const User = () => {
     const [buisinesses, setBusinesses] = useState([])
 
     useEffect(() => {
+        const token = localStorage.getItem("token")
+        if(!token){
+            window.location.replace("/login")
+        }
+    },[])
+
+    useEffect(() => {
         const fetchData = async () => {
             const response = await getBusinesses()
-            console.log(response)
             setBusinesses(response)
         }
         fetchData()
@@ -19,8 +27,10 @@ const User = () => {
     return(
         <>
             <Navbar/>
-            <Categories/>
-            <Search/>
+            <Slider slides={SliderData}/>
+            <Categories buisinesses={buisinesses} setBusinesses={setBusinesses}/>
+            <Search buisinesses={buisinesses} setBusinesses={setBusinesses}/>
+            <BusinessList buisinesses={buisinesses}/>
         </>
     )
 }
