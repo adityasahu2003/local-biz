@@ -11,7 +11,7 @@ with app.app_context():
         db.session.add(user)
 
     for i in range(5):
-        business = Business(business_name=fake.company(), business_category=fake.job(), business_pic_path=f"assets/businesses/{i}")
+        business = Business(business_name=fake.company(), business_category=fake.job(), business_pic_path=f"https://picsum.photos/id/{i+1}/300/200")
         db.session.add(business)
 
     db.session.commit()
