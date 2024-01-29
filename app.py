@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import os
 import hashlib
 from flask_cors import CORS
+from sqlalchemy.exc import IntegrityError
 load_dotenv()
 
 MY_ENV_VAR = os.getenv('MY_ENV_VAR')
@@ -15,14 +16,28 @@ CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///localBizDB.db'
 db.init_app(app)
 
+# @app.route('/register', methods=['POST'])
+# def register_user():
+#     data = request.json
+#     new_user = User(username=data['username'], password_hash=data['password_hash'], email_id=data['email_id'])
+#     db.session.add(new_user)
+#     db.session.commit()
+#     str = MY_ENV_VAR + data['username']
+#     return jsonify({'username': f'{data['username']}', 'token': f'{hashlib.sha256(str.encode()).hexdigest()}'}), 201
+
 @app.route('/register', methods=['POST'])
 def register_user():
     data = request.json
-    new_user = User(username=data['username'], password_hash=data['password_hash'], profile_pic_path=data['profile_pic_path'])
-    db.session.add(new_user)
-    db.session.commit()
-    str = MY_ENV_VAR + data['username']
-    return jsonify({'username': f'{data['username']}', 'token': f'{hashlib.sha256(str.encode()).hexdigest()}'}), 201
+    try:
+        new_user = User(username=data['username'], password_hash=data['password_hash'], email_id=data['email_id'])
+        db.session.add(new_user)
+        db.session.commit()
+        token_str = os.getenv('MY_ENV_VAR') + data['username']
+        return jsonify({'username': data['username'], 'token': hashlib.sha256(token_str.encode()).hexdigest()}), 201
+
+    except IntegrityError:
+        db.session.rollback()
+        return jsonify({'message': 'Username already exists'}), 201
 
 @app.route('/login', methods=['POST'])
 def login_user():
