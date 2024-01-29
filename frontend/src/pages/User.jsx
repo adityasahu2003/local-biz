@@ -7,10 +7,15 @@ import {SliderData} from "../components/SliderData"
 import BusinessList from "../components/BusinessList"
 import { getBusinesses } from "../utils/api"
 
-
-
 const User = () => {
     const [buisinesses, setBusinesses] = useState([])
+
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+        if(!token){
+            window.location.replace("/login")
+        }
+    },[])
 
     useEffect(() => {
         const fetchData = async () => {

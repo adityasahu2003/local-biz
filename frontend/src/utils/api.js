@@ -7,7 +7,7 @@ export const registerUser = async (username,email_id, password_hash) => {
         },
         body: JSON.stringify({username, email_id, password_hash})
     })
-    return response.json()
+    return response
 }
 export const signInUser = async (username, password_hash) => {
     const response = await fetch("http://localhost:5000/login",{
