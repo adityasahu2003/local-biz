@@ -11,11 +11,15 @@ export const AuthProvider = ({ children }) => {
         try{
             let hashedPassword = await sha256(password)
             const response = (await registerUser(username, email, hashedPassword))
+            console.log(response)
             if(response.ok){
-                localStorage.setItem("token", response.token)
+                const data = await response.json()
+                const token = data.token
+                localStorage.setItem("token", token)
                 setUser(response.user)
                 window.location.replace("/")
             }else{
+                console.log(response)
                 alert(response.message)
             }
         }catch(err){
@@ -26,12 +30,15 @@ export const AuthProvider = ({ children }) => {
     const signIn = async (username, password) => {
         try{
             let hashedPassword = await sha256(password)
-            const response = await (await signInUser(username, hashedPassword)).json()
+            const response = (await signInUser(username, hashedPassword))
             if(response.ok){
-                localStorage.setItem("token", response.token)
+                const data = await response.json()
+                const token = data.token
+                localStorage.setItem("token", token)
                 setUser(response.user)
                 window.location.replace("/")
             }else{
+                console.log(response)
                 alert(response.message)
             }
         }catch(err){
@@ -46,8 +53,6 @@ export const AuthProvider = ({ children }) => {
     }
 
     const value = {
-        user,
-        setUser,
         register,
         signIn,
         logOut

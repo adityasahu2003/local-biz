@@ -1,7 +1,15 @@
-import { createRef, useContext } from "react"
+import { createRef, useContext, useEffect } from "react"
 import { AuthContext } from "../context/AuthContext"
 
 const Login = () => {
+
+    useEffect(() => {
+        const token = localStorage.getItem("token")
+        if(token){
+            window.location.replace("/")
+        }
+    },[])
+    
     const {signIn} = useContext(AuthContext)
     const usernameRef = createRef(null)
     const passwordRef = createRef(null)

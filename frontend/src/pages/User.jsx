@@ -13,6 +13,13 @@ const User = () => {
     const [buisinesses, setBusinesses] = useState([])
 
     useEffect(() => {
+        const token = localStorage.getItem("token")
+        if(!token){
+            window.location.replace("/login")
+        }
+    },[])
+
+    useEffect(() => {
         const fetchData = async () => {
             const response = await getBusinesses()
             setBusinesses(response)
