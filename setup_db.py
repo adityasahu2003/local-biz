@@ -9,7 +9,7 @@ db = SQLAlchemy(app)
 class User(db.Model):
     username = db.Column(db.String(255), primary_key=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
-    profile_pic_path = db.Column(db.String(255))
+    email_id = db.Column(db.String(255))
 
 class Business(db.Model):
     business_id = db.Column(db.Integer, primary_key=True)

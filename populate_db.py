@@ -6,8 +6,8 @@ fake = Faker()
 with app.app_context():
     for _ in range(10): 
         fake_username = fake.user_name()
-        pic_path = f"assets/users/{fake_username}.png"
-        user = User(username=fake_username, password_hash=fake.sha256(), profile_pic_path=pic_path)
+        fake_email = fake.email()
+        user = User(username=fake_username, password_hash=fake.sha256(), email_id=fake_email)
         db.session.add(user)
 
     for i in range(5):
