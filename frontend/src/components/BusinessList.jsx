@@ -25,7 +25,7 @@ const BusinessList = ({businesses}) => {
     return(
         <>
             <div className="mx-auto p-8 max-w-3xl">
-                <h1>Business List</h1>
+                <h1 className="text-center font-bold text-2xl mb-4">Businesses</h1>
                 {businesses && businesses.map(business => (
                     <Link className="flex flex-col sm:flex-row gap-2 mb-4 bg-[#f8f9fa] rounded-md shadow-xl hover:shadow-md" to={`/business/${business.business_id}`} key={business.business_id}>
                         <img src={business.business_pic_path} alt="" className="rounded-md"/>

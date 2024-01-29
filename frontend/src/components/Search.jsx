@@ -2,14 +2,18 @@ import { MagnifyingGlassCircleIcon } from '@heroicons/react/24/solid'
 import { createRef, useState } from 'react'
 
 const Search = ({businesses, setBusinesses}) => {
-  const searchRef = createRef(null)
-  const [tempBusinesses, setTempBusinesses] = useState(businesses)
+  const searchRef = createRef(null);
+
   const searchBusinesses = () => {
-    if(searchRef.current.value === ""){
-      setBusinesses(tempBusinesses)
-    }else{
-      let list = businesses.find(business => business.business_name === searchRef.current.value)
-      setBusinesses([list])
+    const searchTerm = searchRef.current.value.toLowerCase()
+    if (searchTerm === "") {
+      setBusinesses([...businesses])
+    } else {
+      const filteredBusinesses = businesses.filter((business) =>
+        business.business_name.toLowerCase().includes(searchTerm)
+      )
+
+      setBusinesses(filteredBusinesses)
     }
   }
 
