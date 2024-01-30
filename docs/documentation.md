@@ -13,7 +13,7 @@ The platform is structured into a frontend and a backend. The frontend is built 
 - SQLAlchemy (Database ORM)
 - SQLite (Database)
 - React.js (Frontend framework)
-- Figma (Frontend wireframes)
+- Figma (Frontend UI Layouts)
 
 
 ## Getting Started
