@@ -48,16 +48,16 @@ const Categories = () => {
 
   return (
     <>
-      <div className="category bg-slate-300">
+      <div className="category">
         <div className="container mx-auto p-8">
           <h1 className="text-center text-3xl font-bold">Categories</h1>
           <div className="categorybox my-8 grid md:grid-cols-3 grid-cols-2 gap-0">
-               <div className="text-center catboxes">Finanace</div>
-               <div className="text-center catboxes">Finanace</div>
-               <div className="text-center catboxes">Finanace</div>
-               <div className="text-center catboxes">Finanace</div>
-               <div className="text-center catboxes">Finanace</div>
-               <div className="text-center catboxes">Finanace</div>
+               <div className="text-center education catboxes">Education</div>
+               <div className="text-center restaurant catboxes">Restaurant</div>
+               <div className="text-center medical catboxes">Medical</div>
+               <div className="text-center library catboxes">Library</div>
+               <div className="text-center clothing catboxes">Clothing</div>
+               <div className="text-center electronics catboxes">Electronics</div>
           </div>
         </div>
       </div>
