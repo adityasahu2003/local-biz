@@ -2,7 +2,8 @@ import { MagnifyingGlassCircleIcon } from '@heroicons/react/24/solid'
 import { createRef, useState } from 'react'
 
 const Search = ({businesses, setBusinesses}) => {
-  const searchRef = createRef(null);
+  const searchRef = createRef(null)
+  let tempData = businesses
 
   const searchBusinesses = () => {
     const searchTerm = searchRef.current.value.toLowerCase()

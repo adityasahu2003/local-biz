@@ -17,6 +17,8 @@ const PostReview = ({id}) => {
             const res = await postReview(id, reviewRef.current.value || "",rating)
             if(res){
                 alert("Review Posted!")
+                reviewRef.current.value = ""
+                setRating(0)
             }
         }else{
             alert("Select the rating by clicking the stars")

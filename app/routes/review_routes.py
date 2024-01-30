@@ -4,7 +4,7 @@ from ..models.business import Business
 import os
 import hashlib
 from .. import db
-import datetime
+from datetime import datetime
 
 review_bp = Blueprint('review_bp', __name__)
 MY_ENV_VAR = os.getenv('MY_ENV_VAR')
