@@ -58,7 +58,7 @@ The platform is structured into a frontend and a backend. The frontend is built 
 - `review_string`: String
 - `rating`: Integer
 
-![image](er_diag.png)
+![image](docs/er_diag.png)
 
 ## Testing
 - Testing the models: `python3 -m unittest tests/test_models.py`
