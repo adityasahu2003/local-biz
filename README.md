@@ -35,7 +35,7 @@ The platform is structured into a frontend and a backend. The frontend is built 
 - `/login` (POST): Authenticate a user.
 - `/businesses` (GET): Fetch all businesses.
 
-![image](data_flow_diag.png)
+![image](docs/data_flow_diag.png)
 
 
 ### Data Models
