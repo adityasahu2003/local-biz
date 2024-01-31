@@ -1,0 +1,14 @@
+.logo{
+    padding-left: 2rem;
+    size: 2rem;
+  
+}
+.navbar{
+    z-index: 1000;
+    background-color: #e9ecef;
+    border-bottom: 0.1rem;
+    height:5.5rem;
+}
+.heading{
+    font-size: 1.5rem;
+}
